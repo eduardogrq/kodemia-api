@@ -6,6 +6,6 @@ function getAll(){
     return Koders.find()
 }
 
-modeule.exports = {
+module.exports = {
     getAll
 }

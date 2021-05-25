@@ -1,11 +1,10 @@
 
 const express = require('express')
-const { router } = require('../server')
 const koders = require('../usecases/koders')
 
-const rounter = express.Router()
+const router = express.Router()
 
-router.get('/', (request, response) => {
+router.get('/', async(request, response) => {
     try{
         const allKoders = await koders.getAll()
 
@@ -25,3 +24,5 @@ router.get('/', (request, response) => {
         })
     }
 })
+
+module.exports = router
