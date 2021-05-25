@@ -1,25 +1,25 @@
 
 const express = require('express')
-const koders = require('../usecases/koders')
+const mentors = require('../usecases/mentors')
 
 const router = express.Router()
 
 router.get('/', async(request, response) => {
     try{
-        const allKoders = await koders.getAll()
+        const allMentors = await mentors.getAll()
 
         response.json({
             succes: true,
-            message: 'All koders',
+            message: 'All mentors',
             data:{
-                koders: allKoders
+                mentors: allMentors
             }
         })
     } catch (error){
         response.status(400)
         response.json({
             succes: false,
-            message: 'Error at get all koders',
+            message: 'Error at get all mentors',
             error: error.message
         })
     }
@@ -27,19 +27,19 @@ router.get('/', async(request, response) => {
 
 router.post('/', async(request, response) => {
     try{
-        const koderCreated = await koders.create(request.body)
+        const mentorCreated = await mentors.create(request.body)
         response.json({
             succes: true,
-            message: 'koder created',
+            message: 'mentor created',
             data:{
-                koder: koderCreated
+                mentor: mentorCreated
             }
         })
     } catch (error){
         response.status(400)
         response.json({
             succes: false,
-            message: 'Error at create koder',
+            message: 'Error at create mentor',
             error: error.message
         })
     }
@@ -48,20 +48,20 @@ router.post('/', async(request, response) => {
 router.delete('/:id', async (request, response) => {
     try{
         const {id} = request.params
-        const koderDeleted = await koders.deleteById(id)
+        const mentorDeleted = await mentors.deleteById(id)
 
         response.json({
             succes: true,
-            message: 'koder deleted',
+            message: 'mentor deleted',
             data:{
-                data: koderDeleted
+                data: mentorDeleted
             }
         })
     } catch (error){
         response.status(400)
         response.json({
             succes: false,
-            message: 'Error at delete koder',
+            message: 'Error at delete mentor',
             error: error.message
         })
     }
@@ -70,20 +70,20 @@ router.delete('/:id', async (request, response) => {
 router.patch('/:id', async (request, response) => {
     try{
         const {id} = request.params
-        const koderUpdated = await koders.updateById(id, request.body)
+        const mentorUpdated = await mentors.updateById(id, request.body)
 
         response.json({
             succes: true,
-            message: 'koder updated',
+            message: 'mentor updated',
             data:{
-                data: koderUpdated
+                data: mentorUpdated
             }
         })
     } catch (error){
         response.status(400)
         response.json({
             succes: false,
-            message: 'Error at update koder',
+            message: 'Error at update mentor',
             error: error.message
         })
     }

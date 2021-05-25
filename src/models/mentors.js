@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose')
 
-const KoderSchema = new mongoose.Schema({
+const MentorSchema = new mongoose.Schema({
     name: {
         type: String,
         minLenght: 2,
@@ -25,9 +25,14 @@ const KoderSchema = new mongoose.Schema({
         maxLenght: 1,
         required: true,
         enum:['m', 'f'],
+    },
+    module: {
+        type: String,
+        enum : [ 'front', 'back', 'cloud', 'react' ], 
+        require : true
     }
 })
 
-const model = mongoose.model('koders', KoderSchema)
+const model = mongoose.model('mentors', MentorSchema)
 
 module.exports = model

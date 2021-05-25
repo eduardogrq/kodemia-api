@@ -18,4 +18,6 @@ dbConnect()
 // 2.- Crear el caso de uso necesario
 // 3.- Crear el endpoint necesario
  
-
+// POST
+// DELETE
+// PATCH
