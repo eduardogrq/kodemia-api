@@ -22,3 +22,12 @@ dbConnect()
 // DELETE
 // PATCH
 
+//proyecto de backend
+
+// 1.- api de devto
+// get/posts
+// post/posts
+// get/posts/:id
+
+// 2da parte
+// usar el api para mostrar posts en su reto de front

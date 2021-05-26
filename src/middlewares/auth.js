@@ -42,7 +42,7 @@ function authRoles (allowedRoles){
 
         const userFound = await users.getById(isValidToken.id)
 
-        const userRoles = userFound.roles
+        const userRoles = userFound.role || []
 
         const isAllowedRole = userRoles.find(userRole => {
             return allowedRoles.find( allowedRole => userRole === allowedRoles )
